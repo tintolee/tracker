@@ -6,11 +6,11 @@ import { Context as LocationContext } from '../Context/LocationContext'
 
 
 export default function Map() {
-const {state:{currentLocation}} = useContext(LocationContext)
+const {state:{currentLocation, locations}} = useContext(LocationContext)
 if (!currentLocation){
   return <ActivityIndicator size="large"  style={{marginTop: 28}}/>
 }
-  
+ 
     return (
         
            <MapView
@@ -34,11 +34,16 @@ if (!currentLocation){
             strokeColor=" rgba(158,158,255,1.0)"
             fillColor= " rgba(158,158,255,0.3)"
           />
+         
 
        <Marker coordinate = {currentLocation.coords}
          pinColor = {"blue"} // any color
          title={"title"}
          description={"description"}/>
+
+        <Polyline coordinates={locations.map((loc) => loc.coords)}  lineDashPattern = {
+   [1]
+}/>
 
           </MapView>
     )

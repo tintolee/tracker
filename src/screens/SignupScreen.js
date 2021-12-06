@@ -23,7 +23,7 @@ export default function SignupScreen({navigation}) {
            />
            
            <Spacer/>
-           <NavLink linkText='Already have an account? SIgn in instead'
+           <NavLink linkText='Already have an account? Sign in instead'
              routeName="Signin"
            
            />
