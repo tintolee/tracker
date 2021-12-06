@@ -11,7 +11,7 @@ import SignupScreen from "./src/screens/SignupScreen";
 import { Provider  as AuthProvider} from "./src/Context/AuthContext";
 import { setNavigator } from "./src/navigationRef";
 import ResolveAuthScreen from "./src/screens/ResolveAuthScreen";
-
+import {Provider as LocationProvider} from './src/Context/LocationContext'
 
 const switchNavigator=createStackNavigator({
   ResolveAuth: ResolveAuthScreen,
@@ -38,9 +38,11 @@ const App= createAppContainer(switchNavigator)
 
 export default()=>{
 return(
+  <LocationProvider>
   <AuthProvider>
     <App ref ={(navigator)=>{setNavigator(navigator)}}/>
   </AuthProvider>
+  </LocationProvider>
 )
 
 }
