@@ -45,7 +45,7 @@ if (!currentLocation){
 			'#0000FF'
 		
 		]}
-		strokeWidth={6} lineDashPattern = {
+		strokeWidth={3} lineDashPattern = {
    [0]
 }/>
 

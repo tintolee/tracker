@@ -23,7 +23,11 @@ export default function TrackDetailScreen({navigation}) {
             }}
             style= {styles.map}
             >
-                <Polyline lineDashPattern={[0]} coordinates={track.locations.map(loc=> loc.coords)}  />
+                <Polyline lineDashPattern={[0]}    strokeColors={[
+			'#0000FF'
+		
+		]}
+		strokeWidth={3} coordinates={track.locations.map(loc=> loc.coords)}  />
             </MapView>
         </>
     )
