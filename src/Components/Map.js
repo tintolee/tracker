@@ -10,7 +10,7 @@ const {state:{currentLocation, locations}} = useContext(LocationContext)
 if (!currentLocation){
   return <ActivityIndicator size="large"  style={{marginTop: 28}}/>
 }
- 
+     console.log(currentLocation);
     return (
         
            <MapView
@@ -30,19 +30,23 @@ if (!currentLocation){
            >
           <Circle
             center={currentLocation.coords}
-            radius={30}
+            radius={500}
             strokeColor=" rgba(158,158,255,1.0)"
             fillColor= " rgba(158,158,255,0.3)"
           />
          
 
        <Marker coordinate = {currentLocation.coords}
-         pinColor = {"blue"} // any color
+         pinColor = {"red"} //
          title={"title"}
          description={"description"}/>
 
-        <Polyline coordinates={locations.map((loc) => loc.coords)}  lineDashPattern = {
-   [1]
+        <Polyline coordinates={locations.map((loc) => loc.coords)} strokeColors={[
+			'#0000FF'
+		
+		]}
+		strokeWidth={6} lineDashPattern = {
+   [0]
 }/>
 
           </MapView>
